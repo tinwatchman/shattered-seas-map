@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shattered Seas Map</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/map.css">
+</head>
+<body>
+    <div class="main container-fluid" data-bind="visible: isInitialized" style="display: none;">
+        <div class="row">
+            <div class="sidebar pull-right col-lg-3 col-md-3 hidden-print hidden-xs hidden-sm visible-md visible-lg" data-bind="visible: hasMapState" style="display:none;">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Thanes</h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Team</th>
+                                <th>Land</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: players">
+                            <tr data-bind="css: $data.statusClass">
+                                <td data-bind="text: $data.name"></td>
+                                <td data-bind="text: $data.team"></td>
+                                <td data-bind="html: $data.location"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="lead text-primary" data-bind="visible: isLoading">loading...</p>
+            <p class="lead text-danger" data-bind="visible: isError">error!</p>
+            <p class="lead text-warning" data-bind="visible: isNotFound">not found!</p>
+        </div>
+        <div class="map-container" data-bind="visible: hasMapState, with: mapState" style="display:none;">
+            <!-- ko foreach: $data.hexes -->
+            <div data-bind="attr: { id: $data.hexId }, css: $data.hexClasses">
+                <div class="hex-island"></div>
+                <div class="hex-border"></div>
+                <!-- ko if: $data.hasPlayers -->
+                <div class="hex-players" data-bind="foreach: $data.players">
+                    <span class="playerToken" data-bind="if: $data.hasIcon, css: $data.playerClass, attr: { title: $data.name }"></span>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $data.underAttack -->
+                <div class="hex-under-attack"></div>
+                <!-- /ko -->
+                <!-- ko if: $data.destroyed -->
+                <div class="hex-destroyed-layer"></div>
+                <!-- /ko -->
+                <div class="hex-label" data-bind="text: $data.label"></div>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Options</h3>
+                    </div>
+                    <div class="panel-body">
+                        <button id="refreshToggle" type="button" class="btn btn-default btn-lg active" aria-pressed="true" autocomplete="off" data-bind="click: onRefreshToggle, text: refreshText, enable: hasMapState">Refresh On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js" type="text/javascript"></script>
+    <script src="/assets/js/mapvm.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var mapViewModel = new MapViewModel({
+            mapUrl: "{{config.mapUrl}}",
+            historyUrl: "{{config.historyUrl}}",
+            playerUrl: "{{config.playerUrl}}",
+            refreshRate: {{{config.mapClientRefreshRate}}},
+            playerRefreshRate: {{{config.thaneClientRefreshRate}}}
+        });
+    </script>
+</body>
+</html>

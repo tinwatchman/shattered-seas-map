@@ -1,0 +1,441 @@
+.map-container {
+    width: 825px;
+    height: 1600px;
+    background-color: white;
+}
+.hex {
+    width: 110px;
+    height: 125px;
+    position: absolute;
+    background-position: center center;
+}
+.hex-island {
+    width: 110px;
+    height: 125px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 1;
+    background-position: center center;
+}
+.hex-border {
+    width: 110px;
+    height: 125px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 2;
+    background-position: center center;
+}
+.hex-players {
+    width: 90px;
+    height: 31px;
+    padding: 3px 0 3px;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    white-space: nowrap;
+}
+.team-black .hex-players,
+.team-brown .hex-players,
+.team-green .hex-players,
+.team-purple .hex-players {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.hex-under-attack {
+    width: 110px;
+    height: 125px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 4;
+    background-image: url('../images/hex-under-attack.svg');
+    background-position: center center;
+}
+.hex-destroyed-layer {
+    width: 110px;
+    height: 125px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 5;
+    background-image: url('../images/destroyed.svg');
+    background-position: center center;
+}
+.hex-label {
+    width: 32px;
+    height: 18px;
+    position: absolute;
+    top: 90px;
+    left: 39px;
+    z-index: 6;
+    font-family: Tahoma, Geneva, Arial, sans-serif;
+    font-size: 11px;
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+}
+.hex-normal .hex-border,
+.hex-destroyed .hex-border {
+    background-image: url('../images/hex-black-border.svg');
+}
+.hex-attacked .hex-border {
+    background-image: url('../images/hex-gray-border.svg');
+}
+/* TEAM CLASSES */
+.team-black {
+    background-image: url('../images/hex-black-back.svg');
+}
+.team-blue {
+    background-image: url('../images/hex-blue-back.svg');
+}
+.team-brown {
+    background-image: url('../images/hex-brown-back.svg');
+}
+.team-green {
+    background-image: url('../images/hex-green-back.svg');
+}
+.team-orange {
+    background-image: url('../images/hex-orange-back.svg');
+}
+.team-purple {
+    background-image: url('../images/hex-purple-back.svg');
+}
+.team-red {
+    background-image: url('../images/hex-red-back.svg');
+}
+.team-white {
+    background-image: url('../images/hex-white-back.svg');
+}
+.team-yellow {
+    background-image: url('../images/hex-yellow-back.svg');
+}
+/* island classes */
+.island1 .hex-island {
+    background-image: url('../images/island1.svg');
+}
+.island2 .hex-island {
+    background-image: url('../images/island2.svg');
+}
+.island3 .hex-island {
+    background-image: url('../images/island3.svg');
+}
+.island4 .hex-island {
+    background-image: url('../images/island4.svg');
+}
+/* ROW 1 */
+#d1 {
+    top: 10px;
+    left: 154px;
+}
+#e1 {
+    top: 10px;
+    left: 256px;
+}
+#f1 {
+    top: 10px;
+    left: 359px;
+}
+#g1 {
+    top: 10px;
+    left: 462px;
+}
+#h1 {
+    top: 10px;
+    left: 564px;
+}
+/* ROW 2 */
+#c2 {
+    top: 98px;
+    left: 102px;
+}
+#d2 {
+    top: 98px;
+    left: 205px;
+}
+#e2 {
+    top: 98px;
+    left: 306px;
+}
+#f2 {
+    top: 98px;
+    left: 410px;
+}
+#g2 {
+    top: 98px;
+    left: 513px;
+}
+#h2 {
+    top: 98px;
+    left: 616px;
+}
+/* ROW 3 */
+#b3 {
+    top: 187px;
+    left: 51px;
+}
+#c3 {
+    top: 187px;
+    left: 154px;
+}
+#d3 {
+    top: 187px;
+    left: 256px;
+}
+#e3 {
+    top: 187px;
+    left: 359px;
+}
+#f3 {
+    top: 187px;
+    left: 462px;
+}
+#g3 {
+    top: 187px;
+    left: 564px;
+}
+#h3 {
+    top: 187px;
+    left: 667px;
+}
+/* ROW 4 */
+#a4 {
+    top: 276px;
+    left: 0px;
+}
+#b4 {
+    top: 276px;
+    left: 102px;
+}
+#c4 {
+    top: 276px;
+    left: 205px;
+}
+#d4 {
+    top: 276px;
+    left: 306px;
+}
+#e4 {
+    top: 276px;
+    left: 410px;
+}
+#f4 {
+    top: 276px;
+    left: 513px;
+}
+#g4 {
+    top: 276px;
+    left: 616px;
+}
+#h4 {
+    top: 276px;
+    left: 718px;
+}
+/* ROW 5 */
+#b5 {
+    top: 365px;
+    left: 51px;
+}
+#c5 {
+    top: 365px;
+    left: 154px;
+}
+#d5 {
+    top: 365px;
+    left: 256px;
+}
+#e5 {
+    top: 365px;
+    left: 359px;
+}
+#f5 {
+    top: 365px;
+    left: 462px;
+}
+#g5 {
+    top: 365px;
+    left: 564px;
+}
+#h5 {
+    top: 365px;
+    left: 667px;
+}
+/* ROW 6 */
+#a6 { top: 454px; left: 0px; }
+#b6 { top: 454px; left: 102px; }
+#c6 { top: 454px; left: 205px; }
+#d6 { top: 454px; left: 306px; }
+#e6 { top: 454px; left: 410px; }
+#f6 { top: 454px; left: 513px; }
+#g6 { top: 454px; left: 616px; }
+#h6 { top: 454px; left: 718px; }
+/* ROW 7 */
+#b7 { top: 543px; left: 51px; }
+#c7 { top: 543px; left: 154px; }
+#d7 { top: 543px; left: 256px; }
+#e7 { top: 543px; left: 359px; }
+#f7 { top: 543px; left: 462px; }
+#g7 { top: 543px; left: 564px; }
+#h7 { top: 543px; left: 667px; }
+/* ROW 8 */
+#a8 { top: 632px; left: 0px; }
+#b8 { top: 632px; left: 102px; }
+#c8 { top: 632px; left: 205px; }
+#d8 { top: 632px; left: 306px; }
+#e8 { top: 632px; left: 410px; }
+#f8 { top: 632px; left: 513px; }
+#g8 { top: 632px; left: 616px; }
+#h8 { top: 632px; left: 718px; }
+/* ROW 9 */
+#b9 { top: 721px; left: 51px; }
+#c9 { top: 721px; left: 154px; }
+#d9 { top: 721px; left: 256px; }
+#e9 { top: 721px; left: 359px; }
+#f9 { top: 721px; left: 462px; }
+#g9 { top: 721px; left: 564px; }
+#h9 { top: 721px; left: 667px; }
+/* ROW 10 */
+#a10 { top: 810px; left: 0px; }
+#b10 { top: 810px; left: 102px; }
+#c10 { top: 810px; left: 205px; }
+#d10 { top: 810px; left: 306px; }
+#e10 { top: 810px; left: 410px; }
+#f10 { top: 810px; left: 513px; }
+#g10 { top: 810px; left: 616px; }
+#h10 { top: 810px; left: 718px; }
+/* ROW 11 */
+#b11 { top: 898px; left: 51px; }
+#c11 { top: 898px; left: 154px; }
+#d11 { top: 898px; left: 256px; }
+#e11 { top: 898px; left: 359px; }
+#f11 { top: 898px; left: 462px; }
+#g11 { top: 898px; left: 564px; }
+#h11 { top: 898px; left: 667px; }
+/* ROW 12 */
+#a12 { top: 988px; left: 0px; }
+#b12 { top: 988px; left: 102px; }
+#c12 { top: 988px; left: 205px; }
+#d12 { top: 988px; left: 306px; }
+#e12 { top: 988px; left: 410px; }
+#f12 { top: 988px; left: 513px; }
+#g12 { top: 988px; left: 616px; }
+#h12 { top: 988px; left: 718px; }
+/* ROW 13 */
+#b13 { top: 1077px; left: 51px; }
+#c13 { top: 1077px; left: 154px; }
+#d13 { top: 1077px; left: 256px; }
+#e13 { top: 1077px; left: 359px; }
+#f13 { top: 1077px; left: 462px; }
+#g13 { top: 1077px; left: 564px; }
+#h13 { top: 1077px; left: 667px; }
+/* ROW 14 */
+#a14 { top: 1166px; left: 0px; }
+#b14 { top: 1166px; left: 102px; }
+#c14 { top: 1166px; left: 205px; }
+#d14 { top: 1166px; left: 306px; }
+#e14 { top: 1166px; left: 410px; }
+#f14 { top: 1166px; left: 513px; }
+#g14 { top: 1166px; left: 616px; }
+#h14 { top: 1166px; left: 718px; }
+/* ROW 15 */
+#b15 { top: 1255px; left: 51px; }
+#c15 { top: 1255px; left: 154px; }
+#d15 { top: 1255px; left: 256px; }
+#e15 { top: 1255px; left: 359px; }
+#f15 { top: 1255px; left: 462px; }
+#g15 { top: 1255px; left: 564px; }
+#h15 { top: 1255px; left: 667px; }
+/* ROW 16 */
+#c16 { top: 1344px; left: 102px; }
+#d16 { top: 1344px; left: 205px; }
+#e16 { top: 1344px; left: 306px; }
+#f16 { top: 1344px; left: 410px; }
+#g16 { top: 1344px; left: 513px; }
+#h16 { top: 1344px; left: 616px; }
+/* ROW 17 */
+#d17 { top: 1432px; left: 154px; }
+#e17 { top: 1432px; left: 256px; }
+#f17 { top: 1432px; left: 359px; }
+#g17 { top: 1432px; left: 462px; }
+#h17 { top: 1432px; left: 564px; }
+
+/* THANE TOKENS */
+/* .playerToken {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+} */
+.playerIcon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-position: center center;
+    background-size: 25px 25px;
+}
+.playerIcon:first-child:nth-last-child(4),
+.playerIcon:first-child:nth-last-child(4) ~ .playerIcon {
+    width: 20px;
+    height: 20px;
+    margin: 3px 0 0;
+    background-size: 20px 20px;
+}
+.playerIcon:first-child:nth-last-child(5),
+.playerIcon:first-child:nth-last-child(5) ~ .playerIcon {
+    width: 15px;
+    height: 15px;
+    margin: 6px 0 0;
+    background-size: 15px 15px;
+}
+.dead {
+    text-decoration: line-through;
+}
+.black-crescent { background-image: url('../images/black-crescent.png'); }
+.black-cross { background-image: url('../images/black-cross.png'); }
+.black-green-eye { background-image: url('../images/black-green-eye.png'); }
+.black-half-circle { background-image: url('../images/black-half-circle.png'); }
+.black-purple-border { background-image: url('../images/black-purple-border.png'); }
+.blue-constellation { background-image: url('../images/blue-constellation.png'); }
+.blue-crescent { background-image: url('../images/blue-crescent.png'); }
+.blue-dots { background-image: url('../images/blue-dots.png'); }
+.blue-red-bar { background-image: url('../images/blue-red-bar.png'); }
+.blue-star { background-image: url('../images/blue-star.png'); }
+.brown-blue-bar { background-image: url('../images/brown-blue-bar.png'); }
+.brown-chevron { background-image: url('../images/brown-chevron.png'); }
+.brown-crescent { background-image: url('../images/brown-crescent.png'); }
+.brown-cross { background-image: url('../images/brown-cross.png'); }
+.brown-orange-border { background-image: url('../images/brown-orange-border.png'); }
+.green-chevron { background-image: url('../images/green-chevron.png'); }
+.green-cross { background-image: url('../images/green-cross.png'); }
+.green-donatello { background-image: url('../images/green-donatello.png'); }
+.green-hourglass { background-image: url('../images/green-hourglass.png'); }
+.green-stripes { background-image: url('../images/green-stripes.png'); }
+.orange-chevron { background-image: url('../images/orange-chevron.png'); }
+.orange-donatello { background-image: url('../images/orange-donatello.png'); }
+.orange-hourglass { background-image: url('../images/orange-hourglass.png'); }
+.orange-stripes { background-image: url('../images/orange-stripes.png'); }
+.orange-sunrise { background-image: url('../images/orange-sunrise.png'); }
+.purple-bar { background-image: url('../images/purple-bar.png'); }
+.purple-cross { background-image: url('../images/purple-cross.png'); }
+.purple-star { background-image: url('../images/purple-star.png'); }
+.purple-stripe { background-image: url('../images/purple-stripe.png'); }
+.purple-t { background-image: url('../images/purple-t.png'); }
+.red-chevron { background-image: url('../images/red-chevron.png'); }
+.red-cross { background-image: url('../images/red-cross.png'); }
+.red-dots { background-image: url('../images/red-dots.png'); }
+.red-green-border { background-image: url('../images/red-green-border.png'); }
+.red-stripe { background-image: url('../images/red-stripe.png'); }
+.white-cross { background-image: url('../images/white-cross.png'); }
+.white-dots { background-image: url('../images/white-dots.png'); }
+.white-hourglass { background-image: url('../images/white-hourglass.png'); }
+.white-star { background-image: url('../images/white-star.png'); }
+.white-wave { background-image: url('../images/white-wave.png'); }
+.yellow-bar { background-image: url('../images/yellow-bar.png'); }
+.yellow-crescent { background-image: url('../images/yellow-crescent.png'); }
+.yellow-cross { background-image: url('../images/yellow-cross.png'); }
+.yellow-dots { background-image: url('../images/yellow-dots.png'); }
+.yellow-star { background-image: url('../images/yellow-star.png'); }

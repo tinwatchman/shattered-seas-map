@@ -1,0 +1,34 @@
+{
+  "name": "shattered-megagame",
+  "version": "1.0.0",
+  "description": "web app for the shattered seas megagame held on January 21, 2016",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jasmine",
+    "postinstall": "grunt"
+  },
+  "author": "Jon Stout <j.stout@jonstout.net>",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "4.2.1",
+    "npm": "2.14.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "edit-google-spreadsheet": "^0.2.21",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "helmet": "^1.1.0",
+    "knockout": "^3.4.0",
+    "mongoose": "^4.3.6",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "jasmine": "^2.4.1"
+  }
+}
