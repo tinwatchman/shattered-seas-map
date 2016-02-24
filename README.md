@@ -1,4 +1,4 @@
-SHATTERED SEAS MEGAGAME MAP
+SUNDERED SEAS MEGAGAME MAP
 ===========================
 
 ![Screenshot of hex map](SCREENSHOT.png "Screenshot of hex map")
